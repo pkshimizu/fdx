@@ -1,12 +1,11 @@
 package net.noncore.fdx.presentation.views
 
-import net.noncore.fdx.domain.use_cases.SampleUseCase
 import tornadofx.*
 
 class MainView : View("Main View") {
-    private val sampleUseCase: SampleUseCase by di()
 
-    override val root = vbox {
-        label { text = sampleUseCase.execute("Taro")}
+    override val root = hbox {
+        label { text = "fdx ver 1.0.0"}
+        label { text = "2021-07-23 17:47"}
     }
 }
