@@ -37,5 +37,5 @@ tasks.withType<Test> {
 
 javafx { // Here we configure OpenJFX
     version = "11.0.2" // Target Java version
-    modules = arrayListOf("javafx.controls", "javafx.graphics") //Adding modules, you can find more info in the documentation
+    modules = arrayListOf("javafx.controls", "javafx.graphics", "javafx.fxml") //Adding modules, you can find more info in the documentation
 }
