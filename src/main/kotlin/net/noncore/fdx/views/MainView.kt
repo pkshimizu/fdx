@@ -1,4 +1,4 @@
-package net.noncore.fdx.presentation.views
+package net.noncore.fdx.views
 
 import javafx.scene.layout.AnchorPane
 import tornadofx.*

@@ -1,7 +1,7 @@
 package net.noncore.fdx
 
 import javafx.application.Application
-import net.noncore.fdx.presentation.views.MainView
+import net.noncore.fdx.views.MainView
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
