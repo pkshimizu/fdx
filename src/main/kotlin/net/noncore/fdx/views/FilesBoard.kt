@@ -9,4 +9,13 @@ class FilesBoard : View("Files Board") {
     val right: VBox by fxid()
 
     override val root: GridPane by fxml("/FilesBoard.fxml")
+
+    override fun onCreate() {
+        super.onCreate()
+    }
+
+    override fun onBeforeShow() {
+        super.onBeforeShow()
+        left.children.add(FileLine().root)
+    }
 }
