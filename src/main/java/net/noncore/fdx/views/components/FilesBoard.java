@@ -14,5 +14,6 @@ public class FilesBoard extends GridPane implements View {
    public FilesBoard() {
        load("FilesBoard.fxml");
        left.getChildren().add(new FileLine());
+       right.getChildren().add(new FileLine());
    }
 }
