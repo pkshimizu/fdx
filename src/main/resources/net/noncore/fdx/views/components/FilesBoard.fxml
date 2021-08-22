@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 
-<fx:root
-        type="javafx.scene.layout.GridPane"
-        maxHeight="-Infinity"
-        maxWidth="-Infinity"
-        minHeight="-Infinity"
-        minWidth="-Infinity"
-        prefHeight="400.0"
-        prefWidth="600.0"
-        xmlns:fx="http://javafx.com/fxml/1"
-        xmlns="http://javafx.com/javafx/8"
->
-  <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-  </columnConstraints>
-  <rowConstraints>
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-  </rowConstraints>
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox fx:id="left" prefHeight="200.0" prefWidth="100.0" />
-      <VBox fx:id="right" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" />
+      <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn minWidth="256.0" prefWidth="400.0" text="name">
+              <cellValueFactory>
+                  <PropertyValueFactory property="name" />
+              </cellValueFactory>
+          </TableColumn>
+          <TableColumn maxWidth="64.0" minWidth="64.0" prefWidth="64.0" resizable="false" style="-fx-alignment: CENTER-RIGHT;" text="size">
+              <cellValueFactory>
+                  <PropertyValueFactory property="size" />
+              </cellValueFactory>
+          </TableColumn>
+          <TableColumn maxWidth="128.0" minWidth="128.0" prefWidth="128.0" resizable="false" text="date">
+              <cellValueFactory>
+                  <PropertyValueFactory property="date" />
+              </cellValueFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
    </children>
 </fx:root>

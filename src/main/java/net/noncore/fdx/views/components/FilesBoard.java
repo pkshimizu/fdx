@@ -1,48 +1,21 @@
 package net.noncore.fdx.views.components;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 import net.noncore.fdx.views.View;
 
-import java.util.List;
-
-public class FilesBoard extends GridPane implements View {
+public class FilesBoard extends AnchorPane implements View {
     @FXML
-    private VBox left;
-    @FXML
-    private VBox right;
-    private int lineCount = 0;
-    private List<FileLine> lines = List.of(
-            new FileLine(),
-            new FileLine(),
-            new FileLine(),
-            new FileLine(),
-            new FileLine(),
-            new FileLine(),
-            new FileLine(),
-            new FileLine(),
-            new FileLine(),
-            new FileLine());
+    private TableView<FileItem> table;
 
    public FilesBoard() {
        load("FilesBoard.fxml");
-       heightProperty().addListener(((observable, oldValue, newValue) -> {
-           int count = newValue.intValue() / 32;
-           if (lineCount < count) {
-               if (lines.size() > lineCount) {
-                   for(int index = lineCount; index < count; index++) {
-                       left.getChildren().add(lines.get(index));
-                       right.getChildren().remove(lines.get(index));
-                   }
-                   for (int index = count; index < lines.size(); index++) {
-                       if (right.getChildren().indexOf(lines.get(index)) < 0) {
-                           right.getChildren().add(lines.get(index));
-                       }
-                   }
-               }
-           }
-           lineCount = count;
-       }));
+       table.setItems(FXCollections.observableArrayList(
+               new FileItem("build.gradle", "1KB", "2021-08-17 08:50"),
+               new FileItem("gradlew", "6KB", "2021-08-16 22:11"),
+               new FileItem("gradlew.bat", "3KB", "2021-08-16 22:11"),
+               new FileItem("settings.gradle", "24B", "2021-08-16 22:11")));
    }
 }
