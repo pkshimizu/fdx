@@ -38,6 +38,7 @@ public abstract class FileWatcher implements Watcher<FileEvent> {
     @Override
     public void start() {
         watching = true;
+        // TODO スレッド化する
         while(watching) {
             try {
                 WatchKey key = watcher.take();
